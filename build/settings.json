@@ -28,6 +28,7 @@
 
     "resolver" :
     {
-        "maximal task level" : 32
+        "maximal task level" : 32,
+	"use the same trees" : 1
     }
 }

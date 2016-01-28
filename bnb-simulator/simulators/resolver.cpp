@@ -1,10 +1,14 @@
 #include "resolver.hpp"
 
 int simulator::resolver::max_level;
+bool simulator::resolver::same_trees;
 
 void simulator::resolver::apply_settings(const JSONNode& node)
 {
     max_level = node["maximal task level"].as_int();
+    if(node["use the same trees"].as_int())
+        same_trees = true;
+    else same_trees = false;
 }
 
 void simulator::resolver::getInfo(SolverInfo& info)
