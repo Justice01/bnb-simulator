@@ -2,12 +2,17 @@
 
 int simulator::resolver::max_level;
 bool simulator::resolver::same_trees;
+unsigned int simulator::resolver::seed;
 
 void simulator::resolver::apply_settings(const JSONNode& node)
 {
     max_level = node["maximal task level"].as_int();
     if(node["use the same trees"].as_int())
+    {
         same_trees = true;
+        seed = (unsigned)node["seed"].as_int();
+        std::srand(seed);
+    }
     else same_trees = false;
 }
 

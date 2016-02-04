@@ -26,6 +26,8 @@ namespace simulator
 
         static bool same_trees;
 
+        static unsigned int seed;
+
         // tools to generate pseudo-random integers
         std::mt19937 generator{ std::random_device{}() };
         std::uniform_int_distribution<> distribution{ 0, max_level - 1 };
@@ -33,6 +35,7 @@ namespace simulator
         bool split(const task& t)
         {
             if(same_trees) return !(std::rand() % max_level < t.level);
+
             else return !(distribution(generator) < t.level);
         }
 
