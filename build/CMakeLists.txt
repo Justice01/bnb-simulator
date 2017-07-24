@@ -4,7 +4,7 @@ set(PROJECT bnbtest)
 
 project(${PROJECT})
 
-set(CMAKE_CXX_FLAGS "-std=c++11 -Wall")
+set(CMAKE_CXX_FLAGS "-ldl -pthread -std=c++14 -Wall")
 
 include_directories(../BNB-solver ../bnb-simulator)
 
@@ -26,4 +26,4 @@ set_target_properties(${JSON} PROPERTIES
     IMPORTED_LOCATION ../BNB-solver/libjson/libjson.a
 )
 
-target_link_libraries(${PROJECT} ${LIBRARIES} ${JSON})
+target_link_libraries(${PROJECT} ${LIBRARIES} ${JSON} ${CMAKE_DL_LIBS})

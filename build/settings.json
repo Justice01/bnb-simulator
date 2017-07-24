@@ -1,34 +1,26 @@
 {
-    "timer" :
-    {
-        "time cost" :
-        {
-            "solve" : 1,
-            "store" : 1,
-            "load" : 1,
-            "overhead" : 0
+    "communicator": {
+        "bandwidth": 1,
+        "latency": 0
+    },
+    "resolver": {
+        "maximal task level": 40,
+        "seed": 0,
+        "use the same trees": 1
+    },
+    "serializer": {
+        "parcel size": {
+            "command": 0,
+            "record": 0,
+            "subproblem": 1
         }
     },
-
-    "serializer" :
-    {
-        "parcel size" :
-        {
-            "command" : 0,
-            "record" : 0,
-            "subproblem" : 1
+    "timer": {
+        "time cost": {
+            "load": 1,
+            "overhead": 0,
+            "solve": 1,
+            "store": 1
         }
-    },
-
-    "communicator" :
-    {
-        "latency" : 1,
-        "bandwidth" : 1
-    },
-
-    "resolver" :
-    {
-        "maximal task level" : 32,
-	"use the same trees" : 1
     }
 }
