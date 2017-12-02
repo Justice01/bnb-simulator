@@ -4,6 +4,6 @@ set(PROJECT simulators)
 
 project(${PROJECT})
 
-set(SOURCES ../resolver.cpp)
+set(SOURCES ../resolver.cpp ../sched_initializer.cpp)
 
 add_library(${PROJECT} ${SOURCES})

@@ -35,7 +35,7 @@ int main()
     std::list<simulator::process> process_pool;
 
     for (int i = 0; i < n; ++i) {
-        scheduler_pool.emplace_back(balance_params);
+        scheduler_pool.emplace_back(balance_params, simulator::SchedInitializer::chaiIniFileName, simulator::SchedInitializer::chaiSchedFileName);
         resolver_pool.emplace_back();
         tracer_pool.emplace_back(1);
 

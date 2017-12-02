@@ -12,4 +12,5 @@ void apply_settings()
     simulator::serializer::apply_settings(node["serializer"]);
     simulator::communicator::apply_settings(node["communicator"]);
     simulator::resolver::apply_settings(node["resolver"]);
+    simulator::SchedInitializer::apply_settings(node["scheduler"]);
 }
