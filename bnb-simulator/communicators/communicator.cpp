@@ -5,8 +5,8 @@ long simulator::communicator::bandwidth;
 
 void simulator::communicator::apply_settings(const JSONNode& node)
 {
-    latency = node["latency"].as_int();
-    bandwidth = node["bandwidth"].as_int();
+    latency = node["n_latency"].as_int();
+    bandwidth = node["n_bandwidth"].as_int();
 }
 
 // constructor

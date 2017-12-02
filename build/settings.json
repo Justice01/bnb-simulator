@@ -4,19 +4,19 @@
         "n_latency": 0
     },
     "resolver": {
-        "n_maximal task level": 40,
+        "n_maximal_task_level": 40,
         "n_seed": 0,
-        "b_use the same trees": 1
+        "b_use_the_same_trees": 1
     },
     "serializer": {
-        "parcel size": {
+        "parcel_size": {
             "n_command": 0,
             "n_record": 0,
             "n_subproblem": 1
         }
     },
     "timer": {
-        "time cost": {
+        "time_cost": {
             "n_load": 1,
             "n_overhead": 0,
             "n_solve": 1,
