@@ -7,13 +7,11 @@
 
 namespace simulator
 {
-    class SchedInitializer
+    struct SchedInitializer
     {
-        static std::string simulator::chaiIniFileName;
+        static std::string chaiIniFileName;
 
-        static std::string simulator::chaiSchedFileName;
-
-    public:
+        static std::string chaiSchedFileName;
 
         static void apply_settings(const JSONNode& node);
     };
