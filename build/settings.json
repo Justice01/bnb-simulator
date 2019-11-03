@@ -1,34 +1,30 @@
 {
-    "timer" :
-    {
-        "time cost" :
-        {
-            "solve" : 1,
-            "store" : 1,
-            "load" : 1,
-            "overhead" : 0
+    "communicator": {
+        "n_bandwidth": 1,
+        "n_latency": 0
+    },
+    "resolver": {
+        "n_maximal_task_level": 40,
+        "n_seed": 0,
+        "b_use_the_same_trees": 1
+    },
+    "serializer": {
+        "parcel_size": {
+            "n_command": 0,
+            "n_record": 0,
+            "n_subproblem": 1
         }
     },
-
-    "serializer" :
-    {
-        "parcel size" :
-        {
-            "command" : 0,
-            "record" : 0,
-            "subproblem" : 1
+    "timer": {
+        "time_cost": {
+            "n_load": 1,
+            "n_overhead": 0,
+            "n_solve": 1,
+            "n_store": 1
         }
     },
-
-    "communicator" :
-    {
-        "latency" : 1,
-        "bandwidth" : 1
-    },
-
-    "resolver" :
-    {
-        "maximal task level" : 32,
-	"use the same trees" : 1
+    "scheduler": {
+        "c_chaiIniFileName": "",
+        "c_chaiSchedFileName": ""
     }
 }

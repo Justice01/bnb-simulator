@@ -13,6 +13,7 @@
 #include <serializers/serializer.hpp>
 #include <communicators/communicator.hpp>
 #include <simulators/resolver.hpp>
+#include <simulators/sched_initializer.hpp>
 
 void apply_settings();
 

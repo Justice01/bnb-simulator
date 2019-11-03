@@ -3,22 +3,30 @@
 #include <simulators/resolver.hpp>
 #include <processes/process.hpp>
 
-#include <kernel/dmmemory/simpsched.hpp>
+#include <kernel/dmmemory/sched.hpp>
 #include <kernel/dmmemory/schedtracer.hpp>
 
 #include <list>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <iterator>
+
+void input (int &n, std::vector<int> &balance_params);
 
 int main()
 {
     apply_settings();
 
-    int n, steps;
+    int n;
 
-    std::cin >> n >> steps;
+    std::vector<int> balance_params;
+
+    input(n, balance_params);
 
     simulator::communicator comm(n);
 
-    std::list<SimpSched> scheduler_pool;
+    std::list<Sched> scheduler_pool;
 
     std::list<simulator::resolver> resolver_pool;
 
@@ -27,7 +35,7 @@ int main()
     std::list<simulator::process> process_pool;
 
     for (int i = 0; i < n; ++i) {
-        scheduler_pool.emplace_back(steps);
+        scheduler_pool.emplace_back(balance_params, simulator::SchedInitializer::chaiIniFileName, simulator::SchedInitializer::chaiSchedFileName);
         resolver_pool.emplace_back();
         tracer_pool.emplace_back(1);
 
@@ -59,5 +67,21 @@ int main()
 
         if (quit)
             process_pool.erase(process_cursor);
+    }
+}
+
+void input (int &n, std::vector<int> &balance_params)
+{
+    std::vector<std::string> s_params;
+    std::string input;
+    int i_input = 0;
+    getline(std::cin, input);
+    std::istringstream iss(input);
+    copy(std::istream_iterator<std::string>(iss), std::istream_iterator<std::string>(), back_inserter(s_params));
+    if (!(std::istringstream(s_params[0]) >> n)) n = 0;
+
+    for(unsigned int i = 1; i < s_params.size(); i++){
+        if (!(std::istringstream(s_params[i]) >> i_input)) i_input = 0;
+        balance_params.push_back(i_input);
     }
 }
